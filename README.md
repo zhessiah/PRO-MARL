@@ -33,16 +33,6 @@ CUDA_VISIBLE_DEVICES=2 python3 src/main.py --config=PRO-MARL --env-config=sc2 wi
 ```
 
 ```shell
-# For Difficulty-Enhanced Predator-Prey
-python3 src/main.py --config=qmix_predator_prey --env-config=stag_hunt with env_args.map_name=stag_hunt
-```
-
-```shell
-# For Communication tasks
-python3 src/main.py --config=maddpg --env-config=stag_hunt with env_args.map_name=stag_hunt
-```
-
-```shell
 # For Google Football (Insufficient testing)
 # map_name: academy_counterattack_easy, academy_counterattack_hard, five_vs_five...
 python3 src/main.py --config=vdn_gfootball --env-config=gfootball with env_args.map_name=academy_counterattack_hard env_args.num_agents=4
@@ -62,10 +52,9 @@ bash run.sh m3ddpg stag_hunt stag_hunt t_max=5050000 1 2 1
 
 bash run.sh PRO-MARL mpe simple_spread epsilon_anneal_time=500000,td_lambda=0.3 1 0 1
 
-conda activate ROMANCE
+conda activate PRO-MARL
 bash run.sh PRO-MARL sc2 5m_vs_6m epsilon_anneal_time=500000,td_lambda=0.3 1 2 1
 
-bash run.sh qatten gfootball academy_counterattack_easy epsilon_anneal_time=500000,td_lambda=0.3 1 1 1
 
 
 ```
